@@ -1,20 +1,22 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import psycopg2
-from psycopg2 import sql
+from dotenv import load_dotenv
+import os
 
+# Cargar las variables de entorno desde el archivo .env
+load_dotenv()
 app = Flask(__name__)
 CORS(app)
 
 # Configuración de PostgreSQL
 db_config = {
-    'host': 'dpg-csrk5ql6l47c73fgbmeg-a',
-    'dbname': 'movilidad_yfoi',  # Nombre de la base de datos
-    'user': 'root',  # Ajusta el usuario si es necesario
-    'password': 'rZikjEzjEB3j6a6vIFFsyCCgEjSNPger',  # Ajusta la contraseña si es necesario
-    'port': 5432  # Puerto por defecto de PostgreSQL
+    'host': os.getenv('HOST'),
+    'dbname': os.getenv('DBNAME'),
+    'user': os.getenv('USER'),
+    'password': os.getenv('PASSWORD'),
+    'port': int(os.getenv('PORT'))
 }
-
 
 # Ruta para confirmar la conexión a la base de datos
 @app.route('/conexion', methods=['GET'])
