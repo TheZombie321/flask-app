@@ -8,12 +8,13 @@ CORS(app)
 
 # Configuración de PostgreSQL
 db_config = {
-    'host': 'localhost',
-    'dbname': 'movilidad',  # Nombre de la base de datos
-    'user': 'postgres',  # Ajusta el usuario si es necesario
-    'password': 'root',  # Ajusta la contraseña si es necesario
+    'host': 'dpg-csrk5ql6l47c73fgbmeg-a',
+    'dbname': 'movilidad_yfoi',  # Nombre de la base de datos
+    'user': 'root',  # Ajusta el usuario si es necesario
+    'password': 'rZikjEzjEB3j6a6vIFFsyCCgEjSNPger',  # Ajusta la contraseña si es necesario
     'port': 5432  # Puerto por defecto de PostgreSQL
 }
+
 
 # Ruta para confirmar la conexión a la base de datos
 @app.route('/conexion', methods=['GET'])
